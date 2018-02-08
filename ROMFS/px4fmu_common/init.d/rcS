@@ -337,7 +337,7 @@ then
 						set IO_PRESENT yes
 					else
 						echo "PX4IO update failed" >> $LOG_FILE
-						tone_alarm ${TUNE_ERR}
+						tune_control play -m ${TUNE_ERR}
 					fi
 				else
 					echo "PX4IO update failed" >> $LOG_FILE
@@ -675,7 +675,7 @@ then
 			set LOGGER_BUF 6
 			uavcan start fw
 		else
-			tone_alarm ${TUNE_ERR}
+			tune_control play -m ${TUNE_ERR}
 		fi
 	fi
 
